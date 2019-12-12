@@ -1,0 +1,19 @@
+@import "../../scss/mixins";
+@import "../../scss/vars";
+
+
+.list_title_price {
+
+	font-weight: bold;
+	font-size: 23px;
+}
+
+.list_title_num {	
+    background-color: $grun-color;
+    color: $list-title-num-color;
+    width: $list-title-num-size;
+    height: $list-title-num-size;
+    border-radius: 50%;
+    margin-right: 10px;
+	@include wrapper_center_inline_flex();
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import './scss/style.scss';
-import {App} from './components/App/App.js';
+import {Price} from './components/Price/Price.js';
 
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Price />, document.querySelector(".full_container"));
