@@ -1,10 +1,40 @@
-h1 {
-    color: #000;
+@import "libs";
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "reset";
+
+.full_container {
+	
+	& *, & *:before, & *:after { box-sizing: border-box; }
+
+	width: 100%;
+	flex: 0 0 auto;
+	position: relative;
+	margin: 0 auto;
+	max-width: $desktopWidth;
+	padding-left: $padding_full_container;
+	padding-right: $padding_full_container;
+	line-height: $mainLineHeight;
+	font-size: $mainFontSize;
+	color: $mainFontColor;
+	font-family: $mainFont;
+
+
+	.container_price {
+		
+		&>h1 {
+			font-size: $headerPriceFontSize;
+			font-weight: $headerPriceFontWeight;
+			color: $mainFontColor;
+			text-align: center;
+			padding: 33px 10px;
+			line-height: 29px;
+		}
+
+	}
 }
 
 
-.sotr {
-	// background-image: url(img/1.jpg);
-	width: 50px;
-	height: 50px;
-}
+
+

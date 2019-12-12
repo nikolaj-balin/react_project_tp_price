@@ -1,8 +1,15 @@
 module.exports = {
   plugins: [
-    require('autoprefixer')({
-       overrideBrowserslist: ['last 40 versions'],
-       cascade: false
+    require('autoprefixer'),
+    require('css-mqpacker'),
+    require('cssnano')({
+      preset: [
+        'default', {
+          discardComments: {
+            removeAll: true
+          }
+        }
+      ]
     })
   ]
-};
+}
