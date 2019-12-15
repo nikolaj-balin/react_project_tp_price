@@ -20,6 +20,16 @@
 	color: $mainFontColor;
 	font-family: $mainFont;
 
+	@media screen and (max-width: $desktopWidth) {
+		font-size: 12px;
+	}
+	@media screen and (max-width: $tableWidth) {
+		font-size: 11px;
+	}
+	@media screen and (max-width: $phoneWidth) {
+		font-size: 10px;
+	}
+
 
 	.container_price {
 		
