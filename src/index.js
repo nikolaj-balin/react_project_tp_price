@@ -16,7 +16,7 @@ let elements = document.querySelectorAll(".full_container");
 
 for(let el of elements){
     ReactDOM.render(
-        <Provider store={createStoreData(getPrice(JSON.parse(el.dataset.pricejson)))}>
+        <Provider store={createStoreData(getPrice(JSON.parse(el.dataset.pricejson)), el.dataset.base)}>
             <Price />
         </Provider>,
         el

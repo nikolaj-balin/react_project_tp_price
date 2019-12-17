@@ -12,7 +12,6 @@ const getUnicValue = (arr, v) => {
 
 const ButtonPriceSize = (props) => {
     const state_ = useSelector(state => {return {...state}});
-    console.log(state_.data);
 
     return (
         <div className={props.className}>
