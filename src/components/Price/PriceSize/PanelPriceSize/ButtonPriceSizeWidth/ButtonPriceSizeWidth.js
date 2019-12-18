@@ -1,6 +1,6 @@
 import React from "react";
 import {useDispatch, useSelector} from 'react-redux';
-import './ButtonPriceSize.scss';
+import './ButtonPriceSizeWidth.scss';
 
 const getUnicValue = (arr, v) => {
     let unic_obj = {};
@@ -10,18 +10,18 @@ const getUnicValue = (arr, v) => {
     return inic_arr;
 };
 
-const ButtonPriceSize = (props) => {
+const ButtonPriceSizeWidth = (props) => {
     const state_ = useSelector(state => {return {...state}});
 
     return (
-        <div className={props.className}>
-            <h2>{props['data-header']}</h2>
+        <div className="panel-price-size-width">
+            <h2>Ширина:</h2>
             <div className="panel-price-size-width-body">
-                { getUnicValue(state_.data.price_size, props["data-value"]).map((value) =>
+                { getUnicValue(state_.data.price_size, "width" ).map((value) =>
                     <label key={value}>
                         <input type="button"
                                value={value.replace(/\./i,',')}
-                               name={props["data-value"]}
+                               name="width"
                                defaultChecked={value == state_.selected_value.price_size.dlinadugi
                                                || value == state_.selected_value.price_size.width} />
                     </label>
@@ -31,4 +31,4 @@ const ButtonPriceSize = (props) => {
     );
 };
 
-export {ButtonPriceSize};
+export {ButtonPriceSizeWidth};
