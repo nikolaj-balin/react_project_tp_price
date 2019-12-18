@@ -1,6 +1,7 @@
 import React from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import './ButtonPriceSizeWidth.scss';
+import {createWidthButtonAction} from '../../../../../actions/Actions';
 
 const getUnicValue = (arr, v) => {
     let unic_obj = {};
@@ -11,7 +12,10 @@ const getUnicValue = (arr, v) => {
 };
 
 const ButtonPriceSizeWidth = (props) => {
+
+    const dispatch = useDispatch();
     const state_ = useSelector(state => {return {...state}});
+    const dispatch_width_button = useCallback((e) => {dispatch(createWidthButtonAction(e.target))}, []);
 
     return (
         <div className="panel-price-size-width">
@@ -19,11 +23,12 @@ const ButtonPriceSizeWidth = (props) => {
             <div className="panel-price-size-width-body">
                 { getUnicValue(state_.data.price_size, "width" ).map((value) =>
                     <label key={value}>
+                        {value.replace(/\./i,',') + ' м'}
                         <input type="button"
+                               onClick={dispatch_width_button}
                                value={value.replace(/\./i,',')}
                                name="width"
-                               defaultChecked={value == state_.selected_value.price_size.dlinadugi
-                                               || value == state_.selected_value.price_size.width} />
+                               defaultChecked={value == state_.selected_value.price_size.width} />
                     </label>
                 )}
             </div>

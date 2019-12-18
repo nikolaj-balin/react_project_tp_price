@@ -4,11 +4,16 @@ import reduser_prop from '../redusers/reduser_prop.js';
 const createData = (price, base) => {
     return {
     				data: {
-    				    price_size: [...price]
+    				    price_size: [...price],
+                        base_value: base,
+                        udl_value: 2
                     },
     				selected_value: {
     				    price_size: {...price[0]},
-                        base_value: base
+                        base_udl_value: base,
+                        value_inp_length: 1,
+                        width: price[0].width,
+                        dlinadugi: price[0].dlinadugi,
     				}
     			};
 };

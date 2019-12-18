@@ -1,11 +1,44 @@
 import C from './constants.js';
 
 
-const createSearchAction = (string) => {
+const createLenghtInpAction = (target) => {
 		return {
-			type: C.SEARCH_WORKER,
-			value: string
+			type: C.LENGTH_EDIT_IN,
+			value: target.value
 		}
 };
 
-export {createSearchAction};
+const createLenghtLiAction = (target) => {
+		return {
+			type: C.LENGTH_EDIT_LI,
+			udl_value: target.dataset.udl,
+			number: target.dataset.n
+
+		}
+};
+
+const createLenghtMinusAction = (target) => {
+		return {
+			type: C.LENGTH_EDIT_MINUS,
+			value: "-",
+
+		}
+};
+
+const createLenghtPlusAction = (target) => {
+		return {
+			type: C.LENGTH_EDIT_PLUS,
+			value: "+",
+
+		}
+};
+
+const createWidthButtonAction = (target) => {
+		return {
+			type: C.WiDTH_EDIT,
+			value: target.value,
+
+		}
+};
+
+export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction};
