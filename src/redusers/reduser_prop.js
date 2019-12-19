@@ -70,8 +70,6 @@ const editStepSize = (store, action) => {
 };
 
 const reduser_props = (store=[], action) => {
-
-	console.log(store);
 		
 	switch (action.type) {
 		case C.LENGTH_EDIT_IN:

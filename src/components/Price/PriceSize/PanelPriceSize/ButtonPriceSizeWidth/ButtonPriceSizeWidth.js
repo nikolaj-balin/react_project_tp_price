@@ -16,6 +16,7 @@ const ButtonPriceSizeWidth = (props) => {
     const dispatch = useDispatch();
     const state_ = useSelector(state => {return {...state}});
     const dispatch_width_button = useCallback((e) => {dispatch(createWidthButtonAction(e.target))}, []);
+    const model = state_.data.model;
 
     return (
         <div className="panel-price-size-width">
@@ -26,10 +27,10 @@ const ButtonPriceSizeWidth = (props) => {
                         <input type="radio"
                                onClick={dispatch_width_button}
                                value={+value}
-                               id={`${value}_width`}
+                               id={`${value}_width${model}`}
                                name="width"
                                defaultChecked={value == state_.selected_value.price_size.width} />
-                        <label htmlFor={`${value}_width`} className={value == state_.selected_value.price_size.width ? 'checked' : ''}>
+                        <label htmlFor={`${value}_width${model}`} className={value == state_.selected_value.price_size.width ? 'checked' : ''}>
                             {value.replace(/\./i,',') + ' м'}
                         </label>
                     </div>

@@ -1,19 +1,20 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import reduser_prop from '../redusers/reduser_prop.js';
 
-const createData = (price, base) => {
+const createData = (obj) => {
     return {
     				data: {
-    				    price_size: [...price],
-                        base_value: base,
-                        udl_value: 2
+    				    price_size: [...obj.price],
+                        base_value: obj.base,
+                        udl_value: 2,
+                        model: obj.model,
                     },
     				selected_value: {
-    				    price_size: {...price[0]},
-                        base_udl_value: base,
+    				    price_size: {...obj.price[0]},
+                        base_udl_value: obj.base,
                         value_inp_length: 1,
-                        width: price[0].width,
-                        dlinadugi: price[0].dlinadugi,
+                        width: obj.price[0].width,
+                        dlinadugi: obj.price[0].dlinadugi,
     				}
     			};
 };
@@ -32,8 +33,8 @@ const logger = store => next => action => {
 
 const storeFactory = (data) => applyMiddleware(logger)(createStore)(reduser_prop, data);
 
-const createStoreData = (price, base) => {
-    return storeFactory(createData(price, base))
+const createStoreData = (obj) => {
+    return storeFactory(createData(obj))
 };
 
 export {createStoreData};
