@@ -29,7 +29,7 @@ const editLenghtMinus = (store, action) => {
 const editLenghtPlus = (store, action) => {
 	let _store = {...store};
 	let base_udl_value = +_store.selected_value.base_udl_value;
-	let udl_value = _store.data.udl_value;
+	let udl_value = +_store.data.udl_value;
 
 	if( base_udl_value >= +_store.data.base_value + +_store.data.udl_value * 4){
 		_store.selected_value.base_udl_value = base_udl_value + udl_value;
@@ -39,13 +39,39 @@ const editLenghtPlus = (store, action) => {
 
 const editWidthSize = (store, action) => {
 	let _store = {...store};
-	_store.selected_value.width = action.value;
+	let dlinadugi = +_store.selected_value.dlinadugi;
+	let width = +action.value;
 
+	let arr_new = [..._store.data.price_size].filter((value) => value.width == width && value.dlinadugi == dlinadugi);
+
+	if(arr_new.length == 0) {
+		let _arr = [..._store.data.price_size].filter((value) => value.width == width)[0];
+		_store.selected_value.price_size = _arr;
+		_store.selected_value.dlinadugi = _arr.dlinadugi;
+	} else {
+		_store.selected_value.price_size = arr_new[0];
+	};
+
+	_store.selected_value.width = width;
 
 	return _store;
 };
 
-const reduser_props = (store=[], action) => { 
+const editStepSize = (store, action) => {
+	let _store = {...store};
+	let width = +_store.selected_value.width;
+	let dlinadugi = +action.value;
+
+	let arr_new = [..._store.data.price_size].filter((value) => value.width == width && value.dlinadugi == dlinadugi);
+	_store.selected_value.price_size = arr_new[0];
+	_store.selected_value.dlinadugi = dlinadugi;
+
+	return _store;
+};
+
+const reduser_props = (store=[], action) => {
+
+	console.log(store);
 		
 	switch (action.type) {
 		case C.LENGTH_EDIT_IN:
@@ -64,6 +90,9 @@ const reduser_props = (store=[], action) => {
 			break;
 	case C.WiDTH_EDIT:
 				return editWidthSize(store, action);
+			break;
+	case C.STEP_EDIT:
+				return editStepSize(store, action);
 			break;
 
 		default:

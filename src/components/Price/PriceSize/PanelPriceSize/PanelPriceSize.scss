@@ -1,0 +1,17 @@
+.panel-price-size {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  .panel-price-size-img {
+    width: 75px;
+    padding-right: 13px;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}

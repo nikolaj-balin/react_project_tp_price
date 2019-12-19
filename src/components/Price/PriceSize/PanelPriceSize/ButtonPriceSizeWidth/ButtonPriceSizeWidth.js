@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback} from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import './ButtonPriceSizeWidth.scss';
 import {createWidthButtonAction} from '../../../../../actions/Actions';
@@ -22,14 +22,17 @@ const ButtonPriceSizeWidth = (props) => {
             <h2>Ширина:</h2>
             <div className="panel-price-size-width-body">
                 { getUnicValue(state_.data.price_size, "width" ).map((value) =>
-                    <label key={value}>
-                        {value.replace(/\./i,',') + ' м'}
-                        <input type="button"
+                    <div key={value} className="panel-price-size-width-content">
+                        <input type="radio"
                                onClick={dispatch_width_button}
-                               value={value.replace(/\./i,',')}
+                               value={+value}
+                               id={`${value}_width`}
                                name="width"
                                defaultChecked={value == state_.selected_value.price_size.width} />
-                    </label>
+                        <label htmlFor={`${value}_width`} className={value == state_.selected_value.price_size.width ? 'checked' : ''}>
+                            {value.replace(/\./i,',') + ' м'}
+                        </label>
+                    </div>
                 )}
             </div>
         </div>

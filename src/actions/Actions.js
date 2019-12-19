@@ -41,4 +41,12 @@ const createWidthButtonAction = (target) => {
 		}
 };
 
-export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction};
+const createStepButtonAction = (target) => {
+		return {
+			type: C.STEP_EDIT,
+			value: target.value,
+
+		}
+};
+
+export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction};
