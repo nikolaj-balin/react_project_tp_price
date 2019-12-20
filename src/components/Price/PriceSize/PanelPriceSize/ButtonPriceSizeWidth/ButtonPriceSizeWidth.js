@@ -30,8 +30,9 @@ const ButtonPriceSizeWidth = (props) => {
                                id={`${value}_width${model}`}
                                name="width"
                                defaultChecked={value == state_.selected_value.price_size.width} />
-                        <label htmlFor={`${value}_width${model}`} className={value == state_.selected_value.price_size.width ? 'checked' : ''}>
-                            {value.replace(/\./i,',') + ' м'}
+                        <label htmlFor={`${value}_width${model}`}
+                               className={value == state_.selected_value.price_size.width ? 'checked' : ''}>
+                               {value.replace(/\./i,',') + ' м'}
                         </label>
                     </div>
                 )}

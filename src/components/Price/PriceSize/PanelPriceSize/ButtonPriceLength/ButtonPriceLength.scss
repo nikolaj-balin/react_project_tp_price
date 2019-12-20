@@ -1,0 +1,72 @@
+@import "../../../../../scss/vars";
+@import "../../../../../scss/mixins";
+
+.button-price-length {
+  h2 {
+    font-weight: bold;
+    font-size: $PriceHeadSizeWidth;
+  }
+
+  .panel-price-size-length-body {
+    margin-top: $PanPrSzBodMargTop;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+
+    .panel-price-size-length-range-conteiner {
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .panel-price-size-length-range {
+
+        height: 5px;
+        width: 240px;
+        position: relative;
+        margin-left: 60px;
+
+        &:after {
+          content: '';
+          width: 60px;
+          height: 5px;
+          display: block;
+          position: absolute;
+          left: -60px;
+          top: 0;
+          background-color: $ButtoLengthColor;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        @include bg_color_step_div_2($ButtoLengthColor, $ButtoLengthColorTranspar);
+        @include bg_color_step_div_3($ButtoLengthColor, $ButtoLengthColorTranspar);
+        @include bg_color_step_div_4($ButtoLengthColor, $ButtoLengthColorTranspar);
+        @include bg_color_step_div_5($ButtoLengthColor, $ButtoLengthColorTranspar);
+
+
+
+        @include reset_range();
+        @include Slider_range($ButtoLengthColor, $ButtonLengthHW);
+        @include slider_runnable_track($ButtoLengthColor, $ButtoLengthColorUper);
+
+      }
+
+      .panel-price-size-length-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        align-self: flex-end;
+        width: 240px;
+      }
+    }
+
+
+  }
+}

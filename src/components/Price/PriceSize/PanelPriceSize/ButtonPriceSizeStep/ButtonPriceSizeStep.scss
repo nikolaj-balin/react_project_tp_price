@@ -1,8 +1,59 @@
+@import "../../../../../scss/mixins";
+@import "../../../../../scss/vars";
+
 .panel-price-size-step {
 
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+
+  h2 {
+    font-weight: bold;
+    font-size: $PriceHeadSizeWidth;
+  }
+
   .panel-price-size-step-body {
-    input {
-      display: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: $PanPrSzBodMargTop;
+
+
+    .panel-price-size-step-content {
+      label {
+
+        background-color: $bgButtoWidthColor;
+
+        color: $ButtoPriceSizeFontColor;
+        width: $PriceButtonWSizeWidth;
+        padding: $ButtoPriceSizePadding;
+        cursor: pointer;
+        position: relative;
+        font-size: $ButtonsizeFontSize;
+        line-height: normal;
+        font-weight: bold;
+        margin-right: $MarginRightButton;
+        border: $ButtoPriceSizeButton;
+        @include wrapper_center_inline_flex();
+
+
+
+        &.checked:after {
+          @include checked_button();
+        }
+
+        &.checked {
+          border: $borderButtoWidthColor;
+          color: $WidthColor;
+        }
+      }
+
+      input {
+        display: none;
+      }
     }
   }
 }

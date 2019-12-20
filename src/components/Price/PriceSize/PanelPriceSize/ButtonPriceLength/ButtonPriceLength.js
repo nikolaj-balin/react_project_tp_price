@@ -20,53 +20,57 @@ const ButtonPriceLength = (props) => {
     return (
         <div className="button-price-length">
             <h2>Длина в метрах:</h2>
-            <div>
-                <div className="line-dop"></div>
-                <div className="range">
-                    <input onInput={dispatch_length_inp}
-                           type="range"
-                           min="1"
-                           max="5"
-                           steps="1"
-                           defaultValue={+state_.selected_value.value_inp_length} />
-                </div>
-                <ul className="range-labels">
-                    <li className="active selected"
-                        data-n="1"
-                        data-udl={base}
-                        onClick={dispatch_length_ul}>{base}
-                    </li>
-                    <li className=""
-                        data-n="2"
-                        data-udl={base+udl}
-                        onClick={dispatch_length_ul}>
+            <div className="panel-price-size-length-body">
+                <div className="panel-price-size-length-range-conteiner">
+                    <div className={`panel-price-size-length-range pos${+state_.selected_value.value_inp_length}`}>
+                        {/*<div className="line-dop"></div>*/}
+                        <input onInput={dispatch_length_inp}
+                               type="range"
+                               min="1"
+                               max="5"
+                               steps="1"
+                               className='range_price_size'
+                               defaultValue={+state_.selected_value.value_inp_length}
+                        />
+                    </div>
+                    <ul className="panel-price-size-length-list">
+                        <li className="active selected"
+                            data-n="1"
+                            data-udl={base}
+                            onClick={dispatch_length_ul}>{base}
+                        </li>
+                        <li className=""
+                            data-n="2"
+                            data-udl={base+udl}
+                            onClick={dispatch_length_ul}>
                         <span className="pagination__dot"
                               data-tooltip={'+ ' + udl_price}>{base+udl}
                         </span>
-                    </li>
-                    <li className=""
-                        data-n="3"
-                        data-udl={base+udl*2}
-                        onClick={dispatch_length_ul}>
+                        </li>
+                        <li className=""
+                            data-n="3"
+                            data-udl={base+udl*2}
+                            onClick={dispatch_length_ul}>
                         <span className="pagination__dot"
                               data-tooltip={'+ ' + 2*udl_price}>{base+udl*2}
                         </span>
-                    </li>
-                    <li className=""
-                        data-n="4"
-                        data-udl={base+udl*3}
-                        onClick={dispatch_length_ul}>
+                        </li>
+                        <li className=""
+                            data-n="4"
+                            data-udl={base+udl*3}
+                            onClick={dispatch_length_ul}>
                         <span className="pagination__dot"
                               data-tooltip={'+ ' + 3*udl_price}>{base+udl*3}
                         </span>
-                    </li>
-                    <li className="last"
-                        data-n="5"
-                        data-udl={base+udl*4}
-                        data-min-udl={base+udl*4}
-                        onClick={dispatch_length_ul}>{'> ' + (base+udl*3)}
-                    </li>
-                </ul>
+                        </li>
+                        <li className="last"
+                            data-n="5"
+                            data-udl={base+udl*4}
+                            data-min-udl={base+udl*4}
+                            onClick={dispatch_length_ul}>{'> ' + (base+udl*3)}
+                        </li>
+                    </ul>
+                </div>
                 <div className={"dop-pp " + (+state_.selected_value.value_inp_length == 5 ? "open" : "")}>
                     <div className="minus"
                          onClick={dispatch_length_minus}>-
