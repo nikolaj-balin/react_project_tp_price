@@ -21,7 +21,6 @@ const createLenghtMinusAction = (target) => {
 		return {
 			type: C.LENGTH_EDIT_MINUS,
 			value: "-",
-
 		}
 };
 
@@ -49,4 +48,14 @@ const createStepButtonAction = (target) => {
 		}
 };
 
-export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction};
+const createLenghtInpActionKeyDown = (event) => {
+
+		return {
+			type: C.KEY_DOWN_EDIT,
+			value: event.key,
+			event: event
+
+		}
+};
+
+export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction,createLenghtInpActionKeyDown};

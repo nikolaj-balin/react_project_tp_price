@@ -6,7 +6,8 @@ const createData = (obj) => {
     				data: {
     				    price_size: [...obj.price],
                         base_value: obj.base,
-                        udl_value: 2,
+                        sale: obj.sale,
+                        udl_value: obj.udl,
                         model: obj.model,
                     },
     				selected_value: {

@@ -1,3 +1,6 @@
+@import "../../../../scss/mixins";
+@import "../../../../scss/vars";
+
 .panel-price-size {
   display: flex;
   align-items: flex-start;
@@ -8,7 +11,7 @@
 
   .panel-price-size-img {
     width: 75px;
-    padding-right: 13px;
+    padding-right: $MarginPanelImg;
     align-self: center;
 
     img {

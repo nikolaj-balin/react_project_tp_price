@@ -5,6 +5,7 @@ const constants = {
     LENGTH_EDIT_PLUS: "LENGTH_EDIT_PLUS",
     WiDTH_EDIT: "WiDTH_EDIT",
     STEP_EDIT: "STEP_EDIT",
+    KEY_DOWN_EDIT: "KEY_DOWN_EDIT",
 
 }
 

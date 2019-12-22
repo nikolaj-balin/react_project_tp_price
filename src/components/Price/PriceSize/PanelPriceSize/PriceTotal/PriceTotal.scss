@@ -1,0 +1,66 @@
+@import "../../../../../scss/mixins";
+@import "../../../../../scss/vars";
+
+
+.price-total {
+  position: relative;
+  margin-left: $MarginPanel;
+  h2 {
+    font-weight: bold;
+    font-size: $PriceHeadSizeWidth;
+  }
+
+  .sum-price {
+
+    margin-top: $PanPrSzBodMargTop;
+
+
+
+    .sum-price-dubl {
+      font-size: 26px;
+      font-weight: bold;
+      border: 1px solid #fcc01d;
+      text-align: center;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      width: 173px;
+      background-color: #fff;
+      margin-top: -5.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.sale {
+        width: 236px;
+      }
+
+      .sale_prise_total {
+        font-size: 21px;
+        font-weight: normal;
+        position: relative;
+        margin-right: 10px;
+
+        &:before {
+          border-bottom: 3px solid #f00c;
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 50%;
+          transform: rotate(-14deg);
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+
+  .no_nal {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+
+}

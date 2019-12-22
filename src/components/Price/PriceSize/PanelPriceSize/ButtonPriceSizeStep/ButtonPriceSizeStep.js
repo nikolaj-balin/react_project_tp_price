@@ -21,22 +21,24 @@ const ButtonPriceSizeStep = (props) => {
 
     return (
         <div className="panel-price-size-step">
-            <h2>Шаг дуг:</h2>
-            <div className="panel-price-size-step-body">
-                { getUnicValue(state_.data.price_size, "dlinadugi", +state_.selected_value.width ).map((value) =>
-                    <div key={value} className="panel-price-size-step-content">
-                        <input type="radio"
-                               onClick={dispatch_step_button}
-                               value={+value}
-                               id={`${value}_step${model}`}
-                               name="step"
-                               defaultChecked={value == state_.selected_value.price_size.dlinadugi} />
-                        <label htmlFor={`${value}_step${model}`}
-                               className={value == state_.selected_value.price_size.dlinadugi ? 'checked' : ''}>
-                            {value.replace(/\./i,',') + ' м'}
-                        </label>
-                    </div>
-                )}
+            <div className='conteiner'>
+                <h2>Шаг дуг:</h2>
+                <div className="panel-price-size-step-body">
+                    { getUnicValue(state_.data.price_size, "dlinadugi", +state_.selected_value.width ).map((value) =>
+                        <div key={value} className="panel-price-size-step-content">
+                            <input type="radio"
+                                   onClick={dispatch_step_button}
+                                   value={+value}
+                                   id={`${value}_step${model}`}
+                                   name="step"
+                                   defaultChecked={value == state_.selected_value.price_size.dlinadugi} />
+                            <label htmlFor={`${value}_step${model}`}
+                                   className={value == state_.selected_value.price_size.dlinadugi ? 'checked' : ''}>
+                                {value.replace(/\./i,',') + ' м'}
+                            </label>
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );

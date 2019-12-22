@@ -60,6 +60,9 @@
 }
 
 @mixin Slider_range($ButtoLengthColor, $ButtonLengthHW) {
+  input[type=range] {
+    height: 0;
+  }
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: $ButtonLengthHW;
@@ -81,6 +84,7 @@
     background: $ButtoLengthColor;
     cursor: pointer;
     outline: none;
+    border: none;
   }
 
   /* Тоже самое для IE */
@@ -121,9 +125,51 @@
 
 
 @mixin slider_runnable_track($ButtoLengthColor, $ButtoLengthColorUper) {
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    //background: $ButtoLengthColorUper;
+    background: linear-gradient(to right, $ButtoLengthColorUper 0%, $ButtoLengthColorUper 100%);
+  }
+
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, $ButtoLengthColorUper 0%, $ButtoLengthColorUper 100%);
+    //background: $ButtoLengthColorUper;
+
+  }
+
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    //background: $ButtoLengthColorUper;
+    background: linear-gradient(to right, $ButtoLengthColorUper 0%, $ButtoLengthColorUper 100%);
+  }
+
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: $ButtoLengthColorUper;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: $ButtoLengthColorUper;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: $ButtoLengthColor;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: $ButtoLengthColor;
+  }
 
   input.range_price_size[value='2']::-webkit-slider-runnable-track {
-    background: linear-gradient(to right, $ButtoLengthColor 0%, $ButtoLengthColor 25%, $ButtoLengthColorUper 25%, $ButtoLengthColorUper 100%);
+    background: linear-gradient(to right, $ButtoLengthColor 0%, $ButtoLengthColor 25%, $ButtoLengthColorUper 25%,
+            $ButtoLengthColorUper 100%);
   }
 
   input.range_price_size[value='2']:focus::-webkit-slider-runnable-track {
@@ -170,42 +216,14 @@
     background: linear-gradient(to right, $ButtoLengthColor 0%, $ButtoLengthColor 100%);
   }
 
-  input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    background: $ButtoLengthColorUper;
-  }
 
-  input[type=range]:focus::-webkit-slider-runnable-track {
-    background: $ButtoLengthColorUper;
-  }
+}
 
-  input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    background: $ButtoLengthColorUper;
-  }
-
-  input[type=range]::-ms-track {
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    background: transparent;
-    color: transparent;
-  }
-  input[type=range]::-ms-fill-lower {
-    background: $ButtoLengthColorUper;
-  }
-  input[type=range]:focus::-ms-fill-lower {
-    background: $ButtoLengthColorUper;
-  }
-  input[type=range]::-ms-fill-upper {
-    background: $ButtoLengthColor;
-  }
-  input[type=range]:focus::-ms-fill-upper {
-    background: $ButtoLengthColor;
-  }
+@mixin select_none() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
