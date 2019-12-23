@@ -100,6 +100,22 @@ const editStepSize = (store, action) => {
 	return _store;
 };
 
+const editSoptovar = (store, action) => {
+	let _store = {...store};
+
+	if(action.el.target.classList.contains('dopopciya_col')) {
+		if(_store.selected_value.soptovar[action.name] > 0) {
+			_store.selected_value.soptovar[action.name] -= 1;
+		} else {
+			_store.selected_value.soptovar[action.name] += 1;
+		}
+	} else {
+		_store.selected_value.soptovar[action.name] += 1;
+	}
+
+	return _store;
+};
+
 const reduser_props = (store=[], action) => {
 		
 	switch (action.type) {
@@ -125,7 +141,11 @@ const reduser_props = (store=[], action) => {
 			break;
 
 	case C.KEY_DOWN_EDIT:
-				return editKeyDownSicePrice (store, action);
+				return editKeyDownSicePrice(store, action);
+			break;
+
+	case C.SOPTOVAR_EDIT:
+				return editSoptovar(store, action);
 			break;
 
 		default:

@@ -60,9 +60,13 @@
 }
 
 @mixin Slider_range($ButtoLengthColor, $ButtonLengthHW) {
-  input[type=range] {
-    height: 0;
+
+  @-moz-document url-prefix() {
+    input[type=range] {
+      height: 0;
+    }
   }
+
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: $ButtonLengthHW;
