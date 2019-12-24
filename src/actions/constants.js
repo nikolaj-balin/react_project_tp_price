@@ -7,6 +7,7 @@ const constants = {
     STEP_EDIT: "STEP_EDIT",
     KEY_DOWN_EDIT: "KEY_DOWN_EDIT",
     SOPTOVAR_EDIT: "SOPTOVAR_EDIT",
+    KLAR_EDIT: "KLAR_EDIT",
 
 }
 

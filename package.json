@@ -39,6 +39,9 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "jquery": "^3.4.1",
+    "jqueryp": "^1.0.3",
+    "kladrapi-for-node": "0.0.2",
     "postcss-preset-env": "^6.7.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

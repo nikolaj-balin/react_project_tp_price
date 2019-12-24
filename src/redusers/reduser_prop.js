@@ -116,6 +116,14 @@ const editSoptovar = (store, action) => {
 	return _store;
 };
 
+const editKlar = (store, action) => {
+	let _store = {...store};
+
+	console.log(action.params);
+
+	return _store;
+};
+
 const reduser_props = (store=[], action) => {
 		
 	switch (action.type) {
@@ -146,6 +154,9 @@ const reduser_props = (store=[], action) => {
 
 	case C.SOPTOVAR_EDIT:
 				return editSoptovar(store, action);
+			break;
+	case C.KLAR_EDIT:
+				return editKlar(store, action);
 			break;
 
 		default:

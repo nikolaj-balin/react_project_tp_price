@@ -2,6 +2,7 @@ const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const buildWebpackConfig = merge(baseWebpackConfig, {
     // BUILD config
@@ -70,6 +71,10 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
     new MiniCssExtractPlugin({
         filename: '[name].css',
         chunkFilename: '[id].css',
+    }),
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery'
     })
 ]
 });
