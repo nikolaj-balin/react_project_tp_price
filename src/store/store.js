@@ -34,7 +34,13 @@ const createData = (obj) => {
             value_inp_length: 1,
             width: obj.price[0].width,
             dlinadugi: obj.price[0].dlinadugi,
-            soptovar: {...getArrSoptovarSelected(obj.soptovar)}
+            soptovar: {...getArrSoptovarSelected(obj.soptovar)},
+            delivery: {
+                org: 'delline',
+                kladr: 0,
+                city: '',
+                state_delivery_el: 0
+            }
         }
     };
 };

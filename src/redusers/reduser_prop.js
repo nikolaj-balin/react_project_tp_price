@@ -117,10 +117,18 @@ const editSoptovar = (store, action) => {
 };
 
 const editKlar = (store, action) => {
+
 	let _store = {...store};
 
-	console.log(action.params);
+	_store.selected_value.delivery.kladr = action.params.id;
+	_store.selected_value.delivery.city = action.params.typeShort + '. ' + action.params.name;
 
+	return _store;
+};
+
+const editKlarOrg = (store, action) => {
+	let _store = {...store};
+	_store.selected_value.delivery.org = action.value;
 	return _store;
 };
 
@@ -157,6 +165,9 @@ const reduser_props = (store=[], action) => {
 			break;
 	case C.KLAR_EDIT:
 				return editKlar(store, action);
+			break;
+	case C.ORG_KLAR_EDIT:
+				return editKlarOrg(store, action);
 			break;
 
 		default:

@@ -67,4 +67,11 @@ const createKlardEdit = (params) => {
 		}
 };
 
-export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction,createLenghtInpActionKeyDown, createSoptovarAction, createKlardEdit};
+const createOrgKlardEdit = (el) => {
+		return {
+			type: C.ORG_KLAR_EDIT,
+			value: el.target.dataset.org,
+		}
+};
+
+export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction,createLenghtInpActionKeyDown, createSoptovarAction, createKlardEdit, createOrgKlardEdit};

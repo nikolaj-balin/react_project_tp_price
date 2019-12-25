@@ -4,8 +4,12 @@
 @import "fonts";
 @import "reset";
 
+body {
+	background-color: #EDF8FD;
+}
+
 .full_container {
-	
+
 	& *, & *:before, & *:after { box-sizing: border-box; }
 
 	width: 100%;

@@ -4,6 +4,7 @@ import {PriceSize} from './PriceSize/PriceSize.js';
 import {PriceSoptov} from './PriceSoptov/PriceSoptov.js';
 import {PriceDelivery} from './PriceDelivery/PriceDelivery.js';
 import {PriceModalForm} from './PriceModalForm/PriceModalForm.js';
+import {ButtonPrice} from './ButtonPrice/ButtonPrice.js';
 
 
 const Price = () => (
@@ -12,6 +13,7 @@ const Price = () => (
             <PriceSize />
             <PriceSoptov />
             <PriceDelivery />
+            <ButtonPrice />
             <PriceModalForm />
         </div>
     );
