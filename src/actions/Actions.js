@@ -74,4 +74,18 @@ const createOrgKlardEdit = (el) => {
 		}
 };
 
-export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction,createLenghtInpActionKeyDown, createSoptovarAction, createKlardEdit, createOrgKlardEdit};
+const createKlardEditElStatus = (value) => {
+		return {
+			type: C.EL_STATUS_KLAR_EDIT,
+			value: value,
+		}
+};
+
+const createShowButtonForm = (value) => {
+		return {
+			type: C.SHOW_FORM,
+			value: value,
+		}
+};
+
+export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction,createLenghtInpActionKeyDown, createSoptovarAction, createKlardEdit, createOrgKlardEdit, createKlardEditElStatus, createShowButtonForm};

@@ -35,11 +35,13 @@ const createData = (obj) => {
             width: obj.price[0].width,
             dlinadugi: obj.price[0].dlinadugi,
             soptovar: {...getArrSoptovarSelected(obj.soptovar)},
+            form_show: false,
             delivery: {
                 org: 'delline',
                 kladr: 0,
                 city: '',
-                state_delivery_el: 0
+                state_delivery_el: 0,
+                message_api: ''
             }
         }
     };

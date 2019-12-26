@@ -9,8 +9,10 @@ const constants = {
     SOPTOVAR_EDIT: "SOPTOVAR_EDIT",
     KLAR_EDIT: "KLAR_EDIT",
     ORG_KLAR_EDIT: "ORG_KLAR_EDIT",
+    EL_STATUS_KLAR_EDIT: "EL_STATUS_KLAR_EDIT",
+    SHOW_FORM: "SHOW_FORM",
 
-}
+};
 
 
 export default constants;
