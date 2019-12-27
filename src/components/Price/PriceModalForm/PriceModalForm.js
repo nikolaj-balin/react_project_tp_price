@@ -2,6 +2,8 @@ import React, {useCallback} from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import './PriceModalForm.scss';
 import {createShowButtonForm} from "../../../actions/Actions";
+import {ModalForm} from "./ModalForm/ModalForm.js";
+
 
 const PriceModalForm = () => {
     const state_ = useSelector(state => {return {...state}});
@@ -17,7 +19,7 @@ const PriceModalForm = () => {
                 >&times;
                 </div>
                 <div className='conteiner_body'>
-
+                    <ModalForm />
                 </div>
             </div>
         </div>

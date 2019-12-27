@@ -36,6 +36,12 @@ const createData = (obj) => {
             dlinadugi: obj.price[0].dlinadugi,
             soptovar: {...getArrSoptovarSelected(obj.soptovar)},
             form_show: false,
+            zakaz_fields: {
+                name: '',
+                phone: '',
+                message: '',
+
+            },
             delivery: {
                 org: 'delline',
                 kladr: 0,
