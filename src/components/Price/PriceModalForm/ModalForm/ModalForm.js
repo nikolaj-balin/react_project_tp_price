@@ -5,13 +5,16 @@ import {ButtonFormWidth} from './ButtonFormWidth/ButtonFormWidth';
 import {ButtonFormStep} from './ButtonFormStep/ButtonFormStep';
 import {ButtonFormLength} from './ButtonFormLength/ButtonFormLength';
 import {FormBodyFields} from './FormBodyFields/FormBodyFields';
+import {useSelector} from "react-redux";
 
 const ModalForm = () => {
+
+    const state_ = useSelector(state => {return {...state}});
 
     return (
         <div className='modal_form_body'>
             <div className='form_body_panel'>
-                <h2>Name</h2>
+                <h2>{state_.data.name}</h2>
                 <div className='form_body_panel_content'>
                     <div className='body_panel_label'>
                         <div className='body_panel_row'>Длина теплицы</div>

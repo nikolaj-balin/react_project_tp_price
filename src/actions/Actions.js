@@ -23,9 +23,23 @@ const createLenghtMinusAction = (target) => {
 		}
 };
 
+const createLenghtMinusFormAction = (target) => {
+		return {
+			type: C.LENGTH_EDIT_MINUS_FORM,
+			value: "-",
+		}
+};
+
 const createLenghtPlusAction = (target) => {
 		return {
 			type: C.LENGTH_EDIT_PLUS,
+			value: "+",
+		}
+};
+
+const createLenghtPlusFormAction = (target) => {
+		return {
+			type: C.LENGTH_EDIT_PLUS_FORM,
 			value: "+",
 		}
 };
@@ -37,9 +51,23 @@ const createWidthButtonAction = (target) => {
 		}
 };
 
+const createWidthButtonFormAction = (target) => {
+		return {
+			type: C.WiDTH_EDIT_FORM,
+			value: target.value,
+		}
+};
+
 const createStepButtonAction = (target) => {
 		return {
 			type: C.STEP_EDIT,
+			value: target.value,
+		}
+};
+
+const createStepButtonFormAction = (target) => {
+		return {
+			type: C.STEP_EDIT_FORM,
 			value: target.value,
 		}
 };
@@ -88,4 +116,4 @@ const createShowButtonForm = (value) => {
 		}
 };
 
-export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction,createLenghtInpActionKeyDown, createSoptovarAction, createKlardEdit, createOrgKlardEdit, createKlardEditElStatus, createShowButtonForm};
+export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction,createLenghtInpActionKeyDown, createSoptovarAction, createKlardEdit, createOrgKlardEdit, createKlardEditElStatus, createShowButtonForm, createLenghtMinusFormAction, createLenghtPlusFormAction, createWidthButtonFormAction, createStepButtonFormAction};

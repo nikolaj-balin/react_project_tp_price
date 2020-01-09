@@ -49,6 +49,50 @@ const editLenghtPlus = (store, action) => {
 	return _store;
 };
 
+const editLenghtPlusForm = (store, action) => {
+
+	let _store = {...store};
+	let base_udl_value = +_store.selected_value.base_udl_value;
+	let base = +_store.data.base_value;
+	let udl_value = +_store.data.udl_value;
+	let koef_udl = (base_udl_value - base)/udl_value;
+	let base_price = +_store.selected_value.price_size.price_base;
+	let udl_price = +_store.selected_value.price_size.price_udlinenie;
+	let total_price = (base_price+udl_price*(koef_udl+1))+'';
+	let value_step = base_udl_value + udl_value;
+
+	if(total_price.length >= 6){
+		return _store;
+	}
+
+	if( base_udl_value >= +_store.data.base_value + +_store.data.udl_value * 4){
+		_store.selected_value.base_udl_value = value_step;
+	} else {
+		_store.selected_value.base_udl_value = value_step;
+		_store.selected_value.value_inp_length += 1;
+	};
+
+	return _store;
+};
+
+const editLenghtMinusForm = (store, action) => {
+
+	let _store = {...store};
+
+	if(+_store.selected_value.value_inp_length == 1) {
+		return _store;
+	};
+
+	if( +_store.selected_value.base_udl_value <= +_store.data.base_value + +_store.data.udl_value * 4){
+		_store.selected_value.base_udl_value -= +_store.data.udl_value;
+		_store.selected_value.value_inp_length -= 1;
+	} else if ( +_store.selected_value.base_udl_value > +_store.data.base_value + +_store.data.udl_value * 4) {
+		_store.selected_value.base_udl_value -= +_store.data.udl_value;
+	};
+
+	return _store;
+};
+
 const editKeyDownSicePrice = (store, action) => {
 
 	let _store = {...store};
@@ -68,6 +112,34 @@ const editKeyDownSicePrice = (store, action) => {
 	return _store;
 };
 
+const editLenghtDop = (store, action) => {
+
+	let _store = {...store};
+	let base_udl_value = +_store.selected_value.base_udl_value;
+	let base = +_store.data.base_value;
+	let udl_value = +_store.data.udl_value;
+	let koef_udl = (base_udl_value - base)/udl_value;
+	let base_price = +_store.selected_value.price_size.price_base;
+	let udl_price = +_store.selected_value.price_size.price_udlinenie;
+	let total_price = (base_price+udl_price*(koef_udl+1))+'';
+
+	console.log('_store ccc', _store);
+
+	if(total_price.length >= 6) {
+		_store = editLenghtMinusForm(_store, action);
+		console.log('val', _store);
+		console.log('total_price.length', total_price.length);
+		console.log('total_price', total_price);
+		return editLenghtDop(_store, action)
+	} else {
+		console.log('val no 6', _store);
+		console.log('total_price.length no 6', total_price.length);
+		console.log('total_price no 6', total_price);
+		console.log('_store no 6', _store);
+		return _store;
+	}
+};
+
 const editWidthSize = (store, action) => {
 	let _store = {...store};
 	let dlinadugi = +_store.selected_value.dlinadugi;
@@ -85,7 +157,11 @@ const editWidthSize = (store, action) => {
 
 	_store.selected_value.width = width;
 
-	return _store;
+	return editLenghtDop(_store, action);
+};
+
+const editWidthFormSize = (store, action) => {
+	return editWidthSize(store, action);
 };
 
 const editStepSize = (store, action) => {
@@ -98,6 +174,10 @@ const editStepSize = (store, action) => {
 	_store.selected_value.dlinadugi = dlinadugi;
 
 	return _store;
+};
+
+const editStepFormSize = (store, action) => {
+	return editStepSize(store, action);
 };
 
 const editSoptovar = (store, action) => {
@@ -159,11 +239,24 @@ const reduser_props = (store=[], action) => {
 	case C.LENGTH_EDIT_PLUS:
 				return editLenghtPlus(store, action);
 			break;
+	case C.LENGTH_EDIT_MINUS_FORM:
+				return editLenghtMinusForm(store, action);
+			break;
+
+	case C.LENGTH_EDIT_PLUS_FORM:
+				return editLenghtPlusForm(store, action);
+			break;
 	case C.WiDTH_EDIT:
 				return editWidthSize(store, action);
 			break;
+	case C.WiDTH_EDIT_FORM:
+				return editWidthFormSize(store, action);
+			break;
 	case C.STEP_EDIT:
 				return editStepSize(store, action);
+			break;
+	case C.STEP_EDIT_FORM:
+				return editStepFormSize(store, action);
 			break;
 
 	case C.KEY_DOWN_EDIT:

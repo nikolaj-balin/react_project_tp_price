@@ -27,6 +27,7 @@ const createData = (obj) => {
             udl_value: obj.udl,
             model: obj.model,
             soptovar: {...getArrSoptovar(obj.soptovar)},
+            name: obj.name
         },
         selected_value: {
             price_size: {...obj.price[0]},

@@ -33,7 +33,6 @@ const FormBodyFields = () => {
                           defaultValue={state_.selected_value.zakaz_fields.message}
                 >
                 </textarea>
-                />
             </div>
             <div className="form_body_button_submit">
                 <input type="button" value="Заказать" />
