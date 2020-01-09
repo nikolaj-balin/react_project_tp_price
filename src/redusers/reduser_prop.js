@@ -121,21 +121,12 @@ const editLenghtDop = (store, action) => {
 	let koef_udl = (base_udl_value - base)/udl_value;
 	let base_price = +_store.selected_value.price_size.price_base;
 	let udl_price = +_store.selected_value.price_size.price_udlinenie;
-	let total_price = (base_price+udl_price*(koef_udl+1))+'';
-
-	console.log('_store ccc', _store);
+	let total_price = (base_price+udl_price*(koef_udl))+'';
 
 	if(total_price.length >= 6) {
 		_store = editLenghtMinusForm(_store, action);
-		console.log('val', _store);
-		console.log('total_price.length', total_price.length);
-		console.log('total_price', total_price);
 		return editLenghtDop(_store, action)
 	} else {
-		console.log('val no 6', _store);
-		console.log('total_price.length no 6', total_price.length);
-		console.log('total_price no 6', total_price);
-		console.log('_store no 6', _store);
 		return _store;
 	}
 };
@@ -173,7 +164,7 @@ const editStepSize = (store, action) => {
 	_store.selected_value.price_size = arr_new[0];
 	_store.selected_value.dlinadugi = dlinadugi;
 
-	return _store;
+	return editLenghtDop(_store, action);
 };
 
 const editStepFormSize = (store, action) => {
