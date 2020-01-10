@@ -141,6 +141,8 @@
               color: #C9C9C9;
               font-size: 19px;
               position: relative;
+              user-select: none;
+              cursor: pointer;
             }
 
             input[checked]+label {
@@ -196,6 +198,8 @@
               color: #C9C9C9;
               font-size: 19px;
               position: relative;
+              user-select: none;
+              cursor: pointer;
             }
 
             input[checked]+label {

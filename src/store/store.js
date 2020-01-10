@@ -41,7 +41,11 @@ const createData = (obj) => {
                 name: '',
                 phone: '',
                 message: '',
-
+                succesflag: false,
+                buttonflag: true,
+                ajaxflag: false,
+                message: '',
+                messageflag: false
             },
             delivery: {
                 org: 'delline',

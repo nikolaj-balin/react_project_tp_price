@@ -187,6 +187,39 @@ const editSoptovar = (store, action) => {
 	return _store;
 };
 
+const editSoptovarForm = (store, action) => {
+
+	let _store = {...store};
+
+	if(_store.selected_value.soptovar[action.name] != 0){
+		_store.selected_value.soptovar[action.name] = 0;
+	} else {
+		_store.selected_value.soptovar[action.name] = 1;
+	};
+
+	return _store;
+};
+
+const editSoptovarMinusForm = (store, action) => {
+
+	let _store = {...store};
+
+	if(_store.selected_value.soptovar[action.name] != 0 && store.selected_value.soptovar[action.name] != 1){
+		_store.selected_value.soptovar[action.name] -= 1;
+	};
+	return _store;
+};
+
+const editSoptovarPlusForm = (store, action) => {
+
+	let _store = {...store};
+
+	if(_store.selected_value.soptovar[action.name] != 0){
+		_store.selected_value.soptovar[action.name] += 1;
+	};
+	return _store;
+};
+
 const editKlar = (store, action) => {
 
 	let _store = {...store};
@@ -210,6 +243,47 @@ const editKlarElStatus = (store, action) => {
 const editShowForm = (store, action) => {
 	let _store = {...store};
 	_store.selected_value.form_show = action.value;
+	return _store;
+};
+
+const succesfields = (store) => {
+
+	let _store = {...store};
+	let fields = _store.selected_value.zakaz_fields;
+
+	if(fields.name.length == 0 || fields.message.length == 0 || fields.phone.replace(/[^0-9]/gim, '').length != 11  ){
+		return false;
+	} else {
+		return true;
+	}
+
+};
+
+const editFormSubmit = (store, action) => {
+	let _store = {...store};
+	_store.selected_value.zakaz_fields.buttonflag = false;
+	_store.selected_value.zakaz_fields.succesflag = succesfields(_store);
+	return _store;
+};
+
+const editFormNameField = (store, action) => {
+	let _store = {...store};
+	_store.selected_value.zakaz_fields.name = action.value;
+	_store.selected_value.zakaz_fields.succesflag = succesfields(_store);
+	return _store;
+};
+
+const editFormPhoneField = (store, action) => {
+	let _store = {...store};
+	_store.selected_value.zakaz_fields.phone = action.value;
+	_store.selected_value.zakaz_fields.succesflag = succesfields(_store);
+	return _store;
+};
+
+const editFormMessageField = (store, action) => {
+	let _store = {...store};
+	_store.selected_value.zakaz_fields.message = action.value;
+	_store.selected_value.zakaz_fields.succesflag = succesfields(_store);
 	return _store;
 };
 
@@ -257,6 +331,17 @@ const reduser_props = (store=[], action) => {
 	case C.SOPTOVAR_EDIT:
 				return editSoptovar(store, action);
 			break;
+	case C.SOPTOVAR_EDIT_FORM:
+				return editSoptovarForm(store, action);
+			break;
+
+	case C.SOPTOVAR_EDIT_FORM_MINUS:
+				return editSoptovarMinusForm(store, action);
+			break;
+	case C.SOPTOVAR_EDIT_FORM_PLUS:
+				return editSoptovarPlusForm(store, action);
+			break;
+
 	case C.KLAR_EDIT:
 				return editKlar(store, action);
 			break;
@@ -268,6 +353,20 @@ const reduser_props = (store=[], action) => {
 			break;
 	case C.SHOW_FORM:
 				return editShowForm(store, action);
+			break;
+	case C.FORM_SUBMIT:
+				return editFormSubmit(store, action);
+			break;
+
+	case C.FORM_NAME_FIELDS_EDIT:
+				return editFormNameField(store, action);
+			break;
+
+	case C.FORM_PHONE_FIELDS_EDIT:
+				return editFormPhoneField(store, action);
+			break;
+	case C.FORM_MESSAGE_FIELDS_EDIT:
+				return editFormMessageField(store, action);
 			break;
 
 		default:

@@ -65,7 +65,11 @@
       width: 100%;
       border-radius: 5px;
       box-shadow: none;
-      opacity: .65;
+      opacity: 1.00;
+
+      &.error {
+        opacity: 0.65;
+      }
     }
   }
 }

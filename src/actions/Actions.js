@@ -88,6 +88,27 @@ const createSoptovarAction = (event) => {
 		}
 };
 
+const createSoptovarFormAction = (event) => {
+		return {
+			type: C.SOPTOVAR_EDIT_FORM,
+			name: event.target.name,
+		}
+};
+
+const createSoptovarFormMinusAction = (event) => {
+		return {
+			type: C.SOPTOVAR_EDIT_FORM_MINUS,
+			name: event.target.dataset.name,
+		}
+};
+
+const createSoptovarFormPlusAction = (event) => {
+		return {
+			type: C.SOPTOVAR_EDIT_FORM_PLUS,
+			name: event.target.dataset.name,
+		}
+};
+
 const createKlardEdit = (params) => {
 		return {
 			type: C.KLAR_EDIT,
@@ -116,4 +137,32 @@ const createShowButtonForm = (value) => {
 		}
 };
 
-export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction,createLenghtInpActionKeyDown, createSoptovarAction, createKlardEdit, createOrgKlardEdit, createKlardEditElStatus, createShowButtonForm, createLenghtMinusFormAction, createLenghtPlusFormAction, createWidthButtonFormAction, createStepButtonFormAction};
+const createFormSubmit = (value) => {
+		return {
+			type: C.FORM_SUBMIT,
+			value: value.target,
+		}
+};
+
+const createFormNameFieldEdit = (event) => {
+		return {
+			type: C.FORM_NAME_FIELDS_EDIT,
+			value: event.target.value,
+		}
+};
+
+const createFormPhoneFieldEdit = (event) => {
+		return {
+			type: C.FORM_PHONE_FIELDS_EDIT,
+			value: event.target.value,
+		}
+};
+
+const createFormMessageFieldEdit = (event) => {
+		return {
+			type: C.FORM_MESSAGE_FIELDS_EDIT,
+			value: event.target.value,
+		}
+};
+
+export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction,createLenghtInpActionKeyDown, createSoptovarAction, createKlardEdit, createOrgKlardEdit, createKlardEditElStatus, createShowButtonForm, createLenghtMinusFormAction, createLenghtPlusFormAction, createWidthButtonFormAction, createStepButtonFormAction, createSoptovarFormAction, createSoptovarFormMinusAction, createSoptovarFormPlusAction, createFormSubmit, createFormNameFieldEdit, createFormPhoneFieldEdit,createFormMessageFieldEdit} ;
