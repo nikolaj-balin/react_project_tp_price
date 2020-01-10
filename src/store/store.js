@@ -44,7 +44,7 @@ const createData = (obj) => {
                 succesflag: false,
                 buttonflag: true,
                 ajaxflag: false,
-                message: '',
+                messageajax: '',
                 messageflag: false
             },
             delivery: {

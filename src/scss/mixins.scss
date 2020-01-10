@@ -231,3 +231,69 @@
   user-select: none;
 }
 
+@mixin errormessage($el) {
+
+  @if ($el == input) {
+    &.error input {
+      border: 1px solid #f00;
+    }
+
+    &.succes input {
+      border: 1px solid #3c763d;
+    }
+  } @else {
+    &.error textarea {
+      border: 1px solid #f00;
+    }
+
+    &.succes textarea {
+      border: 1px solid #3c763d;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    font-size: 26px;
+  }
+
+  &.error .icon:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    line-height: 34px;
+    content: "\2718";
+    color: #f00;
+    height: 34px;
+    display: inline-block;
+  }
+
+  &.succes .icon:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    line-height: 34px;
+    content: "\2714";
+    color: #3c763d;
+    height: 34px;
+    display: inline-block;
+  }
+
+  .textinfo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+    color: #f00;
+    display: none;
+  }
+
+  &.error .textinfo {
+    display: block;
+  }
+}
+

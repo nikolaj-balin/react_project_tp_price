@@ -24,6 +24,10 @@ const FormBodyFields = () => {
                        onChange={dispatch_form_name}
                        id="name"
                 />
+                <span className={'icon'}></span>
+                <span className={'textinfo'}>
+                    {(!state_.selected_value.zakaz_fields.buttonflag ? !state_.selected_value.zakaz_fields.succesflag && state_.selected_value.zakaz_fields.name.length == 0 ? 'Имя не может быть пустым' : '' : '')}
+                </span>
             </div>
             <div className={"form_body_phone" + (!state_.selected_value.zakaz_fields.buttonflag ? !state_.selected_value.zakaz_fields.succesflag && state_.selected_value.zakaz_fields.phone.replace(/[^0-9]/gim, '').length != 11 ? ' error' : ' succes' : '')}>
                 <MaskedInput autoComplete="off"
@@ -36,6 +40,10 @@ const FormBodyFields = () => {
                              onChange={dispatch_form_phone}
                              id="phone"
                 />
+                <span className={'icon'}></span>
+                <span className={'textinfo'}>
+                    {(!state_.selected_value.zakaz_fields.buttonflag ? !state_.selected_value.zakaz_fields.succesflag && state_.selected_value.zakaz_fields.phone.replace(/[^0-9]/gim, '').length != 11 ? 'Телефон не корректен' : '' : '')}
+                </span>
             </div>
             <div className={"form_body_message" + (!state_.selected_value.zakaz_fields.buttonflag ? !state_.selected_value.zakaz_fields.succesflag && state_.selected_value.zakaz_fields.message.length == 0 ? ' error' : ' succes' : '')}>
                 <textarea name="message"
@@ -47,12 +55,16 @@ const FormBodyFields = () => {
                           onChange={dispatch_form_message}
                 >
                 </textarea>
+                <span className={'icon'}></span>
+                <span className={'textinfo'}>
+                    {(!state_.selected_value.zakaz_fields.buttonflag ? !state_.selected_value.zakaz_fields.succesflag && state_.selected_value.zakaz_fields.message.length == 0 ? 'Комментарий не может быть пустым' : '' : '')}
+                </span>
             </div>
             <div className="form_body_button_submit">
                 <input type="button"
                        value="Заказать"
                        onClick={dispatch_form_submit}
-                       className={(state_.selected_value.zakaz_fields.buttonflag || state_.selected_value.zakaz_fields.succesflag || state_.selected_value.zakaz_fields.ajaxflag) ? '' : 'error'} />
+                       className={((state_.selected_value.zakaz_fields.buttonflag || state_.selected_value.zakaz_fields.succesflag) && !state_.selected_value.zakaz_fields.ajaxflag) ? '' : 'error'} />
             </div>
         </>
     )
