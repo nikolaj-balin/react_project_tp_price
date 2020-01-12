@@ -6,6 +6,11 @@
 
 body {
 	background-color: #EDF8FD;
+
+	&.open {
+		overflow: hidden;
+		padding-right: 17px;
+	}
 }
 
 .full_container {

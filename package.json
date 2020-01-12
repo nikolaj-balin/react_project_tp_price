@@ -46,6 +46,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-maskedinput": "^4.0.1",
+    "react-maskedinput-updated": "^1.0.3",
     "react-redux": "^7.1.3",
     "redux": "^4.0.4"
   }

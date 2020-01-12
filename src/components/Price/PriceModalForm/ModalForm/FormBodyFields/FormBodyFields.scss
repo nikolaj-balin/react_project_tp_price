@@ -65,6 +65,31 @@
     }
 
     @include errormessage(textarea);
+
+    .ajaxinfo {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 12px;
+
+      &.succes {
+        color: #26be37;
+      }
+
+      &.before {
+        color: #34b1be;
+        padding-left: 20px;
+        background-image: url("./images/ajax-loader.gif");
+        background-size: contain;
+        background-position: center left;
+        background-repeat: no-repeat;
+      }
+
+      &.error {
+        color: #f00;
+      }
+    }
   }
 
   .form_body_button_submit {

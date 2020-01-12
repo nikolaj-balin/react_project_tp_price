@@ -287,6 +287,38 @@ const editFormMessageField = (store, action) => {
 	return _store;
 };
 
+const editFormAjaxSubmit = (store, action) => {
+	let _store = {...store};
+	let message = action.message;
+	let classname = action.classname;
+
+	switch (classname) {
+		case 'before':
+			_store.selected_value.zakaz_fields.ajaxflag = true;
+			_store.selected_value.zakaz_fields.messageflag = true;
+			_store.selected_value.zakaz_fields.messageajax = message;
+			_store.selected_value.zakaz_fields.messageClass = classname;
+			break;
+		case 'succes':
+			_store.selected_value.zakaz_fields.ajaxflag = true;
+			_store.selected_value.zakaz_fields.messageflag = true;
+			_store.selected_value.zakaz_fields.messageajax = message;
+			_store.selected_value.zakaz_fields.messageClass = classname;
+			break;
+		case 'error':
+			_store.selected_value.zakaz_fields.ajaxflag = false;
+			_store.selected_value.zakaz_fields.messageflag = true;
+			_store.selected_value.zakaz_fields.messageajax = message;
+			_store.selected_value.zakaz_fields.messageClass = classname;
+			break;
+		default:
+
+			break;
+	};
+
+	return _store;
+};
+
 const reduser_props = (store=[], action) => {
 		
 	switch (action.type) {
@@ -367,6 +399,9 @@ const reduser_props = (store=[], action) => {
 			break;
 	case C.FORM_MESSAGE_FIELDS_EDIT:
 				return editFormMessageField(store, action);
+			break;
+	case C.FORM_AJAX_SUBMIT:
+				return editFormAjaxSubmit(store, action);
 			break;
 
 		default:

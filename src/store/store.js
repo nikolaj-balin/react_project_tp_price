@@ -45,7 +45,8 @@ const createData = (obj) => {
                 buttonflag: true,
                 ajaxflag: false,
                 messageajax: '',
-                messageflag: false
+                messageflag: false,
+                messageClass: '',
             },
             delivery: {
                 org: 'delline',

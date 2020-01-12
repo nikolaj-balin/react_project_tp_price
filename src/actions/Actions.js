@@ -165,4 +165,12 @@ const createFormMessageFieldEdit = (event) => {
 		}
 };
 
-export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction,createLenghtInpActionKeyDown, createSoptovarAction, createKlardEdit, createOrgKlardEdit, createKlardEditElStatus, createShowButtonForm, createLenghtMinusFormAction, createLenghtPlusFormAction, createWidthButtonFormAction, createStepButtonFormAction, createSoptovarFormAction, createSoptovarFormMinusAction, createSoptovarFormPlusAction, createFormSubmit, createFormNameFieldEdit, createFormPhoneFieldEdit,createFormMessageFieldEdit} ;
+const createFormAjax = (message, classname) => {
+		return {
+			type: C.FORM_AJAX_SUBMIT,
+			message: message,
+			classname: classname,
+		}
+};
+
+export {createLenghtInpAction, createLenghtLiAction, createLenghtMinusAction, createLenghtPlusAction, createWidthButtonAction, createStepButtonAction,createLenghtInpActionKeyDown, createSoptovarAction, createKlardEdit, createOrgKlardEdit, createKlardEditElStatus, createShowButtonForm, createLenghtMinusFormAction, createLenghtPlusFormAction, createWidthButtonFormAction, createStepButtonFormAction, createSoptovarFormAction, createSoptovarFormMinusAction, createSoptovarFormPlusAction, createFormSubmit, createFormNameFieldEdit, createFormPhoneFieldEdit,createFormMessageFieldEdit, createFormAjax} ;

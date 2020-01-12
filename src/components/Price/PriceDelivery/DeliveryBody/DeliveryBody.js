@@ -117,12 +117,13 @@ const DeliveryBody = () => {
         let options = {
             method: 'POST',
             mode: 'no-cors',
-            // body: `query=raschet&kladr=${kladr}&org=${org}&weight=${weight}&volume=${volume}&price=${+price}&city=${city}`
-            body: formData
+            body: `query=raschet&kladr=${kladr}&org=${org}&weight=${weight}&volume=${volume}&price=${+price}&city=${city}`,
+            // body: formData,
+            credentials: 'include',
         };
 
         let response = fetch('https://xn--e1agdgqadcwg5bo3c.xn--p1ai/ajax.html', options);
-        response.then(response => response.text()).then(response => console.log(response));
+        response.then(response =>{console.log(response);response.text()}).then(response => console.log(response)).catch(error => console.error(error));
 
     }, []);
 
