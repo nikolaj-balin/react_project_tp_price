@@ -24,7 +24,16 @@ const ResultatKlar = () => {
             </div>;
             break;
         case 5:
-            el = <div className='text'>{state_.selected_value.delivery.message_api}</div>;
+            el = <div className='text'
+                      dangerouslySetInnerHTML={{__html: state_.selected_value.delivery.message_api}}
+            >
+            </div>;
+            break;
+        case 6:
+            el = <div className='text error'
+                      dangerouslySetInnerHTML={{__html: state_.selected_value.delivery.message_api}}
+            >
+            </div>;
             break;
         default:
             el = '';

@@ -237,6 +237,7 @@ const editKlarOrg = (store, action) => {
 const editKlarElStatus = (store, action) => {
 	let _store = {...store};
 	_store.selected_value.delivery.state_delivery_el = action.value;
+	_store.selected_value.delivery.message_api = action.message;
 	return _store;
 };
 

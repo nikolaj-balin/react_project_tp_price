@@ -164,7 +164,7 @@
       align-items: center;
       justify-content: center;
       flex-wrap: nowrap;
-      margin-top: -5px;
+      margin-top: -7px;
 
       .ss {
         width: 44px;
@@ -187,7 +187,6 @@
         align-items: center;
         justify-content: center;
         margin-right: 10px;
-        margin-top: -8px;
         @include select_none();
         cursor: pointer;
       }

@@ -36,13 +36,23 @@ const FormBodyFields = () => {
               }
             };
 
+            // for(let [name, value] of formData) {
+            //     console.log('formData', `${name} = ${value}`);
+            // }
+
             let options = {
                 method: 'POST',
                 body: formData,
+                mode: 'no-cors',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+
             };
 
             let response = fetch('https://xn--e1agdgqadcwg5bo3c.xn--p1ai/ajax.html', options);
-            response.then(response => response.text()).then(response => {
+            response.then(response => {console.log('ajax_response',response); response.text();}).then(response => {
+                console.log('ajax_response_text',response);
                 dispatch(createFormAjax(response, 'succes'));
             }).catch(error => {
                 dispatch(createFormAjax('Произошла ошибка попробуйте снова!', 'error'))

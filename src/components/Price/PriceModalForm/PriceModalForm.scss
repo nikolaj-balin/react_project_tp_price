@@ -14,7 +14,7 @@
   overflow-y: auto;
 
   &.show {
-    display: flex;
+    display: flex !important;
   }
 
   .conteiner_modal {

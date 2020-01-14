@@ -12,7 +12,7 @@ const getPrice = (obj) => {
 };
 
 
-let elements = document.querySelectorAll(".full_container");
+let elements = document.querySelectorAll(".full_container_react");
 
 for(let el of elements){
     let store_arr = JSON.parse(el.dataset.pricejson);

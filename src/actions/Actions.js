@@ -123,10 +123,11 @@ const createOrgKlardEdit = (el) => {
 		}
 };
 
-const createKlardEditElStatus = (value) => {
+const createKlardEditElStatus = (value, message) => {
 		return {
 			type: C.EL_STATUS_KLAR_EDIT,
 			value: value,
+			message: message,
 		}
 };
 
