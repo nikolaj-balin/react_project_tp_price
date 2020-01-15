@@ -174,7 +174,7 @@
         font-size: 20px;
         text-align: center;
         font-weight: bolder;
-        display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: center;
       }
@@ -183,24 +183,26 @@
         color: #b2b2b2;
         font-size: 34px;
         font-weight: bold;
-        display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: center;
         margin-right: 10px;
         @include select_none();
         cursor: pointer;
+        height: 30px;
       }
 
       .plus {
         color: #b2b2b2;
         font-size: 34px;
         font-weight: bold;
-        display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: center;
         margin-left: 10px;
         @include select_none();
         cursor: pointer;
+        height: 30px;
       }
 
       &.open .ss {
