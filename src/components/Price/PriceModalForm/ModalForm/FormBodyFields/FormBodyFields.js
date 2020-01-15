@@ -10,7 +10,7 @@ const FormBodyFields = () => {
     const dispatch_form_name = useCallback((e) => {dispatch(createFormNameFieldEdit(e))}, []);
     const dispatch_form_phone = useCallback((e) => {dispatch(createFormPhoneFieldEdit(e))}, []);
     const dispatch_form_message = useCallback((e) => {dispatch(createFormMessageFieldEdit(e))}, []);
-    const model = state_.data.model;
+    const model = state_.data.name;
 
     const dispatch_form_submit = useCallback((e) => {
 
@@ -36,27 +36,45 @@ const FormBodyFields = () => {
               }
             };
 
-            // for(let [name, value] of formData) {
-            //     console.log('formData', `${name} = ${value}`);
-            // }
-
             let options = {
                 method: 'POST',
                 body: formData,
-                mode: 'no-cors',
                 headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
+                    'X-Requested-With': 'XMLHttpRequest',
                 }
 
-            };
+            }
 
-            let response = fetch('https://xn--e1agdgqadcwg5bo3c.xn--p1ai/ajax.html', options);
-            response.then(response => {console.log('ajax_response',response); response.text();}).then(response => {
-                console.log('ajax_response_text',response);
-                dispatch(createFormAjax(response, 'succes'));
+            fetch('ajax.html', options).then(response => {
+                return response.text();
+            }).then(resolve => {
+                dispatch(createFormAjax(resolve, 'succes'));
             }).catch(error => {
                 dispatch(createFormAjax('Произошла ошибка попробуйте снова!', 'error'))
             });
+
+            // let xhr = new XMLHttpRequest();
+            // xhr.open('POST', 'ajax.html');
+            // // xhr.responseType = 'text';
+            // // xhr.withCredentials = true;
+            // xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            //
+            // xhr.onload = function() {
+            //     if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+            //         // alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
+            //         dispatch(createFormAjax('Произошла ошибка попробуйте снова!', 'error'));
+            //     } else { // если всё прошло гладко, выводим результат
+            //         // alert(`Готово, получили ${xhr.response.length} байт`); // response -- это ответ сервера
+            //         dispatch(createFormAjax(xhr.response, 'succes'));
+            //     }
+            // };
+            //
+            // xhr.onerror = function() {
+            //     dispatch(createFormAjax('Произошла ошибка попробуйте снова!', 'error'));
+            // };
+            //
+            // xhr.send(formData);
+
         };
 
     }, []);
@@ -110,8 +128,7 @@ const FormBodyFields = () => {
                 <span className={'textinfo'}>
                     {(!state_.selected_value.zakaz_fields.buttonflag ? !state_.selected_value.zakaz_fields.succesflag && state_.selected_value.zakaz_fields.message.length == 0 ? 'Комментарий не может быть пустым' : '' : '')}
                 </span>
-                {state_.selected_value.zakaz_fields.messageflag ? <span className={'ajaxinfo ' + state_.selected_value.zakaz_fields.messageClass}>
-                    {state_.selected_value.zakaz_fields.messageajax}
+                {state_.selected_value.zakaz_fields.messageflag ? <span dangerouslySetInnerHTML={{__html: state_.selected_value.zakaz_fields.messageajax}} className={'ajaxinfo ' + state_.selected_value.zakaz_fields.messageClass}>
                 </span> : ''}
 
             </div>

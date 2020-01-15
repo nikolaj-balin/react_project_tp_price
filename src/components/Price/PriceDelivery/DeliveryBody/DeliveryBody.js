@@ -106,7 +106,7 @@ const DeliveryBody = () => {
 
         dispatch_edit_el_status(4);
         let formData = new FormData();
-        formData.append('query', 't_raschet');
+        formData.append('query', 'raschet');
         formData.append('kladr', kladr);
         formData.append('org', org);
         formData.append('weight', weight);
@@ -116,13 +116,13 @@ const DeliveryBody = () => {
 
         let options = {
             method: 'POST',
-            // body: `query=raschet&kladr=${kladr}&org=${org}&weight=${weight}&volume=${volume}&price=${+price}&city=${city}`,
             body: formData,
-            credentials: 'include',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+            }
         };
 
-        let response = fetch('ajax.html', options);
-        response.then(response =>{response.text()}).then(response => dispatch_edit_el_status(5, response)).catch(error => dispatch_edit_el_status(6, error));
+        fetch('ajax.html', options).then(response =>{ return response.text()}).then(response => dispatch_edit_el_status(5, response)).catch(error => dispatch_edit_el_status(6, error));
 
         // setTimeout(() => {
         //     let html =  '<span class="dopinfo">' +
