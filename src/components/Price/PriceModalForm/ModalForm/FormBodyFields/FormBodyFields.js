@@ -10,7 +10,8 @@ const FormBodyFields = () => {
     const dispatch_form_name = useCallback((e) => {dispatch(createFormNameFieldEdit(e))}, []);
     const dispatch_form_phone = useCallback((e) => {dispatch(createFormPhoneFieldEdit(e))}, []);
     const dispatch_form_message = useCallback((e) => {dispatch(createFormMessageFieldEdit(e))}, []);
-    const model = state_.data.name;
+    const model = state_.data.model;
+    const name = state_.data.name;
 
     const dispatch_form_submit = useCallback((e) => {
 
@@ -25,7 +26,7 @@ const FormBodyFields = () => {
             formData.append('fio_zakaz', state_.selected_value.zakaz_fields.name);
             formData.append('phone_zakaz', state_.selected_value.zakaz_fields.phone);
             formData.append('text_zakaz', state_.selected_value.zakaz_fields.message);
-            formData.append('teplica', model);
+            formData.append('teplica', name);
             formData.append('length', +state_.selected_value.base_udl_value + ' м');
             formData.append('weight', +state_.selected_value.price_size.width + ' м');
             formData.append('dlinadugi', +state_.selected_value.price_size.dlinadugi + ' м');
