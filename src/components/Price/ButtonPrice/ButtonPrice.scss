@@ -1,0 +1,30 @@
+.button_price {
+  padding-right: 15px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .button_price_body {
+    padding: 33px 0;
+    .button {
+      width: 630px;
+      text-align: center;
+      color: #FFF;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-size: 24px;
+      line-height: 29px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ff5d2c;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #29ABE2;
+        color: #fff;
+      }
+    }
+  }
+}

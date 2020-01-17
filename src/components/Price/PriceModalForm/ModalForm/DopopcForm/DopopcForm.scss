@@ -1,0 +1,116 @@
+.form_panel_dopopc {
+
+  padding-left: 15px;
+
+  .form_panel_dopopc_row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .form_panel_dopopc_check {
+
+      input {
+        display: none;
+      }
+
+      label {
+        display: block;
+        height: 25px;
+        width: 25px;
+        border: 2px solid #C9C9C9;
+        transition: all 0.1s ease-in-out;
+        margin-right: 10px;
+        font-size: 16.9px;
+        font-weight: 100;
+        position: relative;
+        user-select: none;
+        cursor: pointer;
+
+      }
+
+      &.checked label:before {
+        content: "\2714";
+        color: #489C44;
+        position: absolute;
+        display: inline-block;
+        top: -8px;
+        left: 1px;
+        font-size: 28px;
+      }
+    }
+
+    .form_panel_dopopc_text {
+      font-size: 16.9px;
+      font-weight: 100;
+
+
+    }
+
+    .form_panel_dopopc_button {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+
+
+
+      .value {
+        border-radius: 4px;
+        font-size: 17px;
+        margin: 0px 7px;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #C9C9C9;
+      }
+
+      .minus {
+        font-size: 25px;
+        font-weight: bold;
+        color: #C9C9C9;
+        height: 25px;
+        line-height: 25px;
+        padding: 0;
+        margin: 0;
+        margin-top: -6px;
+        user-select: none;
+        cursor: pointer;
+      }
+
+      .plus {
+        font-size: 25px;
+        font-weight: bold;
+        color: #C9C9C9;
+        height: 25px;
+        line-height: 25px;
+        padding: 0;
+        margin: 0;
+        user-select: none;
+        cursor: pointer;
+      }
+      &.active {
+        .plus {
+          color: #000;
+        }
+        .minus {
+          color: #000;
+        }
+        .value {
+          color: #000;
+          border: 1px solid #00bfe9;
+        }
+      }
+    }
+  }
+
+}

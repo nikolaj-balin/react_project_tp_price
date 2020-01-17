@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "browserslist": [
+    "> 1%",
+    "last 30 version"
+  ],
   "scripts": {
-    "watch": "webpack --mode development --watch",
-    "dev": "webpack --mode development",
     "start": "webpack-dev-server --port 5000 --config ./webpack.config.js --mode development",
-    "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --open --config ./webpack.dev.conf.js",
+    "build": "webpack --config ./webpack.build.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +19,11 @@
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
+    "autoprefixer": "^9.7.3",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.3.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",
@@ -30,11 +35,19 @@
     "url-loader": "^3.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "jquery": "^3.4.1",
+    "jqueryp": "^1.0.3",
+    "kladrapi-for-node": "0.0.2",
     "postcss-preset-env": "^6.7.0",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-maskedinput": "^4.0.1",
+    "react-maskedinput-updated": "^1.0.3",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.4"
   }
 }

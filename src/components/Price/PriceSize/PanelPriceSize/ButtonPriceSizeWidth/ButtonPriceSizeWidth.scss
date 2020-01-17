@@ -1,0 +1,61 @@
+@import "../../../../../scss/mixins";
+@import "../../../../../scss/vars";
+
+.panel-price-size-width {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+
+
+  h2 {
+    font-weight: bold;
+    font-size: $PriceHeadSizeWidth;
+  }
+
+  .panel-price-size-width-body {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: $PanPrSzBodMargTop;
+
+    .panel-price-size-width-content {
+      label {
+        background-color: $bgButtoWidthColor;
+        color: $ButtoPriceSizeFontColor;
+        width: $PriceButtonWSizeWidth;
+        height: $PriceButtonWSizeHeight;
+        padding: $ButtoPriceSizePadding;
+        cursor: pointer;
+        position: relative;
+        font-size: $ButtonsizeFontSize;
+        line-height: normal;
+        font-weight: bold;
+        margin-right: $MarginRightButton;
+        border: $ButtoPriceSizeButton;
+        @include wrapper_center_inline_flex();
+        @include select_none();
+
+        &.checked:after {
+          @include checked_button();
+        }
+        &.checked {
+          border: $borderButtoWidthColor;
+          color: $WidthColor;
+        }
+
+
+      }
+
+      input {
+        display: none;
+      }
+
+      &:last-child label {
+        margin-right: 0;
+      }
+    }
+  }
+}

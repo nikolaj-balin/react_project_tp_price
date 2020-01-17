@@ -1,0 +1,117 @@
+@import "../../../../../scss/mixins";
+@import "../../../../../scss/vars";
+
+.form_body_fields {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  .form_body_name {
+    width: 100%;
+    position: relative;
+
+    input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #CACACA;
+      color: #000;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 15px;
+      height: 34px;
+      position: relative;
+    }
+
+    @include errormessage(input);
+
+
+  }
+
+  .form_body_phone {
+    width: 100%;
+    position: relative;
+
+    input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #CACACA;
+      color: #000;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 15px;
+      height: 34px;
+      position: relative;
+    }
+
+    @include errormessage(input);
+  }
+
+  .form_body_message {
+    width: 100%;
+    flex-grow: 1;
+    position: relative;
+
+    textarea {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #CACACA;
+      color: #000;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 15px;
+      height: 322px;
+      position: relative;
+    }
+
+    @include errormessage(textarea);
+
+    .ajaxinfo {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 12px;
+
+      &.succes {
+        color: #26be37;
+      }
+
+      &.before {
+        color: #34b1be;
+        padding-left: 20px;
+        background-image: url("./images/ajax-loader.gif");
+        background-size: contain;
+        background-position: center left;
+        background-repeat: no-repeat;
+      }
+
+      &.error {
+        color: #f00;
+      }
+    }
+  }
+
+  .form_body_button_submit {
+    width: 100%;
+    input {
+      background-color: #449C45;
+      color: #fff;
+      font-size: 23px;
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: 33px;
+      border: 1px solid #449C45;
+      margin-bottom: 0px;
+      height: 35px;
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: none;
+      opacity: 1.00;
+
+      &.error {
+        opacity: 0.65;
+      }
+    }
+  }
+}

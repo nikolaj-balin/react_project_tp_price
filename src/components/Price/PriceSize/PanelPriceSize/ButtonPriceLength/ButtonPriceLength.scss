@@ -1,0 +1,276 @@
+@import "../../../../../scss/vars";
+@import "../../../../../scss/mixins";
+
+.button-price-length {
+  margin-left: $MarginPanel;
+  h2 {
+    font-weight: bold;
+    font-size: $PriceHeadSizeWidth;
+  }
+
+  .panel-price-size-length-body {
+    margin-top: $PanPrSzBodMargTop;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+
+    /*костыль для браузера edge*/
+    &.agent_edge {
+      .panel-price-size-length-range-conteiner {
+        .panel-price-size-length-range {
+          .range_price_size {
+
+            height: 18px;
+
+            /*стили для ползунок*/
+            &::-ms-thumb {
+              height: $ButtonLengthHW;
+              width: $ButtonLengthHW;
+              box-sizing: border-box;
+              border-radius: 50%;
+              background: $ButtoLengthColor;
+              cursor: pointer;
+              margin-top: 0;
+            }
+
+            /*стили для для полосы*/
+
+            &::-ms-track {
+              width: 100%;
+              cursor: pointer;
+              background: transparent;
+              border-color: transparent;
+              color: transparent;
+              height: 2px;
+            }
+
+            &::-ms-fill-lower {
+              background: $ButtoLengthColor;
+            }
+
+            &::-ms-fill-upper {
+              background: #B2B2B2;
+            }
+
+          }
+        }
+
+        .panel-price-size-length-list {
+          z-index: 9;
+        }
+      }
+
+
+    }
+
+    .panel-price-size-length-range-conteiner {
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: $PriceButtonWSizeHeight/2 - $StepHeightLenghtButton/2;
+
+      .panel-price-size-length-range {
+        z-index: 2;
+        height: $StepHeightLenghtButton;
+        width: 240px;
+        position: relative;
+        margin-left: $SizeLengthRangeMargLefrt;
+
+        &:after {
+          content: '';
+          width: 60px;
+          height: $StepHeightLenghtButton;
+          display: block;
+          position: absolute;
+          left: -$SizeLengthRangeMargLefrt;
+          top: 0;
+          background-color: $ButtoLengthColor;
+          z-index: -1;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        @include bg_color_step_div_2($ButtoLengthColor, $ButtoLengthColorTranspar);
+        @include bg_color_step_div_3($ButtoLengthColor, $ButtoLengthColorTranspar);
+        @include bg_color_step_div_4($ButtoLengthColor, $ButtoLengthColorTranspar);
+        @include bg_color_step_div_5($ButtoLengthColor, $ButtoLengthColorTranspar);
+
+
+
+        @include reset_range();
+        @include Slider_range($ButtoLengthColor, $ButtonLengthHW);
+        @include slider_runnable_track($ButtoLengthColor, $ButtoLengthColorUper);
+
+      }
+
+      .panel-price-size-length-list {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: row;
+        align-self: flex-end;
+        width: 240px;
+        margin-top: 7px;
+        z-index: 1;
+
+        li {
+          color: #7a7a7a;
+          font-size: 18px;
+          font-weight: bold;
+          cursor: pointer;
+          position: relative;
+          width: 18px;
+          height: 28px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+
+          &.active {
+            color: $mainFontColor;
+          }
+
+
+          .pagination__dot {
+            position: absolute;
+            bottom: 0;
+            width: 40px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include select_none();
+          }
+
+          &:after{
+            position: absolute;
+            top: -16px;
+            content: "";
+            width: 14px;
+            height: 14px;
+            background: #b2b2b2;
+            border-radius: 50%;
+          }
+
+          &.selected:after{
+            background-color: $ButtoLengthColor;
+          }
+
+          .pagination__dot {
+            position: absolute;
+          }
+
+          &:last-child {
+            position: relative;
+            left: 2px;
+          }
+
+          &.hover_plus_price {
+
+            .hover_price {
+              display: flex;
+              position: absolute;
+              bottom: 200%;
+              left: 40%;
+              color: #000;
+              align-items: center;
+              justify-content: center;
+              background: #fff;
+              width: 110px;
+              font-size: 14px;
+              border: 1px solid #b2b2b2;
+              padding: 8px 0;
+              opacity: 0;
+              transition: 0.5s;
+              border-radius: 3px;
+              content: attr(data-tooltip);
+              z-index: -1;
+            }
+
+            .pagination__dot:hover + .hover_price {
+
+              opacity: 1;
+              z-index: 100;
+            }
+
+
+
+          }
+        }
+      }
+    }
+
+    .dop_pp {
+      margin-left: 17px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      margin-top: -8px;
+
+      .ss {
+        width: 44px;
+        height: 44px;
+        border: 2px solid #b2b2b2;
+        border-radius: 7px;
+        font-size: 20px;
+        text-align: center;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .minus {
+        color: #b2b2b2;
+        font-size: 34px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        @include select_none();
+        cursor: pointer;
+        height: 30px;
+      }
+
+      .plus {
+        color: #b2b2b2;
+        font-size: 34px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        @include select_none();
+        cursor: pointer;
+        height: 30px;
+      }
+
+      &.open .ss {
+        border: 2px solid $ButtoLengthColor;
+      }
+
+      &.open .minus{
+        color: #000;
+        cursor: pointer;
+      }
+
+      &.open .plus{
+        color: #000;
+        cursor: pointer;
+      }
+
+
+    }
+
+
+  }
+}
