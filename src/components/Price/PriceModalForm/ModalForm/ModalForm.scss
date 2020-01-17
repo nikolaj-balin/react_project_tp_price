@@ -240,4 +240,58 @@
     width: calc(50% - 7.5px);
 
   }
+  /*костыль для Edge*/
+  &.agent_edge {
+
+    .form_body_fields {
+
+      .form_body_name {
+        &.succes {
+          .icon::after {
+            right: 10px;
+          }
+        }
+      }
+
+      .form_body_phone {
+        &.succes {
+          .icon::after {
+            right: 10px;
+          }
+        }
+      }
+
+      .form_body_message {
+        &.succes {
+          .icon::after {
+            right: 10px;
+          }
+        }
+      }
+    }
+
+    .form_body_panel {
+
+      .form_panel_dopopc {
+
+        .form_panel_dopopc_row {
+
+          .form_panel_dopopc_check {
+
+            &.checked {
+              input[checked]+label {
+
+                &:before {
+                  top: -6px;
+                  right: -4px;
+                  font-size: 22px;
+                  margin-left: -5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

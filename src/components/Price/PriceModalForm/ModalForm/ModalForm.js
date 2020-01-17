@@ -12,7 +12,7 @@ const ModalForm = () => {
     const state_ = useSelector(state => {return {...state}});
 
     return (
-        <div className='modal_form_body'>
+        <div className={'modal_form_body'  + (/edge/i.test(navigator.userAgent) ? ' agent_edge' : '')}>
             <div className='form_body_panel'>
                 <h2>{state_.data.name}</h2>
                 <div className='form_body_panel_content'>
