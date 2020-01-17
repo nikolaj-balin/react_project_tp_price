@@ -63,11 +63,11 @@ const logger = store => next => action => {
 
     let result = null;
 
-    console.groupCollapsed("dispatching", action.type);
-    console.log('action', action);
+    // console.groupCollapsed("dispatching", action.type);
+    // console.log('action', action);
     result = next(action);
-    console.log('next state', store.getState());
-    console.groupEnd();
+    // console.log('next state', store.getState());
+    // console.groupEnd();
 
 };
 

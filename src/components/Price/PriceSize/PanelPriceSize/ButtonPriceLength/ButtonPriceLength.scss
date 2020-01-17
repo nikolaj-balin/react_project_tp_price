@@ -15,6 +15,55 @@
     justify-content: flex-start;
     flex-direction: row;
 
+    /*костыль для браузера edge*/
+    &.agent_edge {
+      .panel-price-size-length-range-conteiner {
+        .panel-price-size-length-range {
+          .range_price_size {
+
+            height: 18px;
+
+            /*стили для ползунок*/
+            &::-ms-thumb {
+              height: $ButtonLengthHW;
+              width: $ButtonLengthHW;
+              box-sizing: border-box;
+              border-radius: 50%;
+              background: $ButtoLengthColor;
+              cursor: pointer;
+              margin-top: 0;
+            }
+
+            /*стили для для полосы*/
+
+            &::-ms-track {
+              width: 100%;
+              cursor: pointer;
+              background: transparent;
+              border-color: transparent;
+              color: transparent;
+              height: 2px;
+            }
+
+            &::-ms-fill-lower {
+              background: $ButtoLengthColor;
+            }
+
+            &::-ms-fill-upper {
+              background: #B2B2B2;
+            }
+
+          }
+        }
+
+        .panel-price-size-length-list {
+          z-index: 9;
+        }
+      }
+
+
+    }
+
     .panel-price-size-length-range-conteiner {
 
       display: flex;

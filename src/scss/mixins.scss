@@ -50,13 +50,6 @@
     outline: none;
   }
 
-  input[type=range]::-ms-track {
-    width: 100%;
-    cursor: pointer;
-    background: transparent; /* Скрывает слайдер, чтобы можно было добавить собственные стили. */
-    border-color: transparent;
-    color: transparent;
-  }
 }
 
 @mixin Slider_range($ButtoLengthColor, $ButtonLengthHW) {
@@ -89,16 +82,6 @@
     cursor: pointer;
     outline: none;
     border: none;
-  }
-
-  /* Тоже самое для IE */
-  input[type=range]::-ms-thumb {
-    height: $ButtonLengthHW;
-    width: $ButtonLengthHW;
-    box-sizing: border-box;
-    border-radius: 50%;
-    background: $ButtoLengthColor;
-    cursor: pointer;
   }
 }
 
@@ -149,26 +132,6 @@
     cursor: pointer;
     //background: $ButtoLengthColorUper;
     background: linear-gradient(to right, $ButtoLengthColorUper 0%, $ButtoLengthColorUper 100%);
-  }
-
-  input[type=range]::-ms-track {
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    background: transparent;
-    color: transparent;
-  }
-  input[type=range]::-ms-fill-lower {
-    background: $ButtoLengthColorUper;
-  }
-  input[type=range]:focus::-ms-fill-lower {
-    background: $ButtoLengthColorUper;
-  }
-  input[type=range]::-ms-fill-upper {
-    background: $ButtoLengthColor;
-  }
-  input[type=range]:focus::-ms-fill-upper {
-    background: $ButtoLengthColor;
   }
 
   input.range_price_size[value='2']::-webkit-slider-runnable-track {

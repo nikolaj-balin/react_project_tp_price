@@ -28,7 +28,8 @@ const ButtonPriceLength = (props) => {
     return (
         <div className="button-price-length">
             <h2>Длина в метрах:</h2>
-            <div className="panel-price-size-length-body">
+            <div className={"panel-price-size-length-body" + (/edge/i.test(navigator.userAgent) ? ' agent_edge' : '')}>
+
                 <div className="panel-price-size-length-range-conteiner">
                     <div className={`panel-price-size-length-range pos${+state_.selected_value.value_inp_length}`}>
                         <input onInput={dispatch_length_inp}
