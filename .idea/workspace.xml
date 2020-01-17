@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5cc01df5-2c12-48b9-8f4a-49c1c971f770" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/Price/PriceModalForm/ModalForm/FormBodyFields/FormBodyFields.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Price/PriceModalForm/ModalForm/FormBodyFields/FormBodyFields.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1V4lSZIjuP12QshG8Euah1P4qv5" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\project\react_project_tp_price\src\components\Price\PriceModalForm\ModalForm\FormBodyFields\images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.npm" editBeforeRun="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5cc01df5-2c12-48b9-8f4a-49c1c971f770" name="Default Changelist" comment="" />
+      <created>1576421988824</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576421988824</updated>
+      <workItem from="1576421995816" duration="14811000" />
+      <workItem from="1576520283097" duration="1224000" />
+      <workItem from="1576777429257" duration="2721000" />
+      <workItem from="1576862366842" duration="14042000" />
+      <workItem from="1576925202282" duration="17671000" />
+      <workItem from="1576951509550" duration="12381000" />
+      <workItem from="1577018191484" duration="356000" />
+      <workItem from="1577018707753" duration="357000" />
+      <workItem from="1577019276576" duration="10899000" />
+      <workItem from="1577129292393" duration="55000" />
+      <workItem from="1578598203750" duration="58000" />
+      <workItem from="1578598369075" duration="70000" />
+      <workItem from="1578598500263" duration="2615000" />
+      <workItem from="1578684259706" duration="6626000" />
+      <workItem from="1578759147359" duration="20264000" />
+      <workItem from="1578828758045" duration="5319000" />
+      <workItem from="1579026166626" duration="3427000" />
+      <workItem from="1579119313115" duration="165000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="94" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576862383714">
+      <screen x="0" y="0" width="1280" height="1024" />
+    </state>
+    <state x="94" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.1024@0.0.1280.1024" timestamp="1576862383714" />
+    <state x="355" y="221" key="#start" timestamp="1576862415574">
+      <screen x="0" y="0" width="1280" height="1024" />
+    </state>
+    <state x="355" y="221" key="#start/0.0.1280.1024@0.0.1280.1024" timestamp="1576862415574" />
+    <state x="275" y="289" key="EditFileWatcherDialog" timestamp="1576862613744">
+      <screen x="0" y="0" width="1280" height="1024" />
+    </state>
+    <state x="275" y="289" key="EditFileWatcherDialog/0.0.1280.1024@0.0.1280.1024" timestamp="1576862613744" />
+    <state x="419" y="253" key="FileChooserDialogImpl" timestamp="1576521998744">
+      <screen x="0" y="0" width="1280" height="1024" />
+    </state>
+    <state x="419" y="253" key="FileChooserDialogImpl/0.0.1280.1024@0.0.1280.1024" timestamp="1576521998744" />
+    <state width="1236" height="188" key="GridCell.Tab.0.bottom" timestamp="1579035287380">
+      <screen x="0" y="0" width="1280" height="1024" />
+    </state>
+    <state width="1236" height="188" key="GridCell.Tab.0.bottom/0.0.1280.1024@0.0.1280.1024" timestamp="1579035287380" />
+    <state width="1236" height="188" key="GridCell.Tab.0.center" timestamp="1579035287380">
+      <screen x="0" y="0" width="1280" height="1024" />
+    </state>
+    <state width="1236" height="188" key="GridCell.Tab.0.center/0.0.1280.1024@0.0.1280.1024" timestamp="1579035287380" />
+    <state width="1236" height="188" key="GridCell.Tab.0.left" timestamp="1579035287380">
+      <screen x="0" y="0" width="1280" height="1024" />
+    </state>
+    <state width="1236" height="188" key="GridCell.Tab.0.left/0.0.1280.1024@0.0.1280.1024" timestamp="1579035287380" />
+    <state width="1236" height="188" key="GridCell.Tab.0.right" timestamp="1579035287380">
+      <screen x="0" y="0" width="1280" height="1024" />
+    </state>
+    <state width="1236" height="188" key="GridCell.Tab.0.right/0.0.1280.1024@0.0.1280.1024" timestamp="1579035287380" />
+    <state x="141" y="143" key="SettingsEditor" timestamp="1576778656841">
+      <screen x="0" y="0" width="1280" height="1024" />
+    </state>
+    <state x="141" y="143" key="SettingsEditor/0.0.1280.1024@0.0.1280.1024" timestamp="1576778656841" />
+  </component>
+</project>
